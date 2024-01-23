@@ -1,0 +1,40 @@
+---
+
+---
+
+<div class="w-full md:h-[600px]">
+  <div class="swiper sample-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="/slider-1.jpg" alt="Imagen Slider"></div>
+      <div class="swiper-slide"><img src="/slider-2.jpg" alt="Imagen Slider"></div>
+      <div class="swiper-slide"><img src="/slider-3.jpg" alt="Imagen Slider"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<style>
+  .sample-slider{
+    width: 100%;
+    height: 100%;
+  }
+  .sample-slider img{
+    width: 100%;
+    object-fit: cover;
+    height: -webkit-fill-available;
+  }
+</style>
+
+<script>
+  const swiper = new Swiper('.sample-slider', {
+    loop: true,                         //loop
+    autoplay: {                         //autoplay
+      delay: 2000,  
+      disableOnInteraction: false,
+    },       
+    pagination: {                       //pagination(dots)
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  })
+</script>

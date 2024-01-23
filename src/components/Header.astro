@@ -1,0 +1,194 @@
+---
+
+---
+
+<header>
+  <div class="w-full h-[30px] flex justify-end items-center px-4">
+    <a href="tel:3168670099" class="font-semibold"><i class="bi bi-telephone"></i> 3168670099</a>
+  </div>
+  <div class="w-full lista">
+    <nav>
+      <a href="/">
+        <img src='/logo_harmony.webp' alt="Logo Harmony">
+      </a>
+      <button id="Open" class="md:hidden">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="list" id="menu">
+        <li class="md:hidden">
+          <button id="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </li>
+        <li><a href="">Inicio</a></li>
+        <li><a href="">Nosotros</a></li>
+        <li><a href="">Tratamientos</a></li>
+        <li><a href="">Promociones</a></li>
+        <li><a href="">Ubicación</a></li>
+        <li><a href="">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  nav {
+    width: 100%;
+    height: 100px;
+    padding: 0 1rem;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .lista {
+    background-color: var(--blue-100);
+  }
+  nav > a {
+    width: 70%;
+    max-width: 200px;
+  }
+  .list {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100svh;
+    background-color: rgba(20, 28, 36, 0.707);
+    list-style: none;
+    z-index: 10;
+    transform: translateX(-100%);
+  }
+  .list li {
+    margin-top: 20px;
+    font-size: 25px;
+    color: white;
+  }
+  .list li a {
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  .list li a:hover {
+    transition: all 0.275s linear;
+    background-color: ;
+  }
+  button {
+    cursor: pointer;
+  }
+  button span {
+    width: 30px;
+    height: 4px;
+    margin-top: 7px;
+    background-color: white;
+    display: block;
+    border-radius: 5px;
+  }
+  #Close {
+    position: relative;
+    top: 0;
+    right: -100px;
+  }
+  #Close i {
+    transition: all 0.275s linear;
+  }
+  #Close i:hover {
+    transition: all 0.275s linear;
+    color: rgb(219,182,115);
+  }
+  header div:nth-last-child(2) {
+    background: linear-gradient(45deg, var(--gold-100), var(--gold-200));
+    color: white;
+  }
+  @keyframes showMenu {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes hideMenu {
+    0% {
+      transform: translate(0%);
+    }
+    100% {
+      transform: translate(-100%);
+    }
+  }
+  @media (min-width: 768px) {
+    .list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      width: 70%;
+      height: auto;
+      background-color: none;
+      list-style: none;
+      z-index: 10;
+      transform: translateX(0%);
+    }
+    .list li {
+      margin-top: 0;
+      font-size: 20px;
+    }
+    nav {
+      justify-content: space-between;
+    }
+    .lista {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  const abrir = document.getElementById('Open')
+  const menu: any = document.getElementById('menu')
+  const cerrar = document.getElementById('Close')
+  // Create a MediaQueryList object
+  var x = window.matchMedia("(max-width: 768px)")
+
+  function matchM(x: any) {
+    if (x.matches) {
+        abrir?.addEventListener('click', () => {
+        menu.style.display = 'flex'
+        menu.style.animation = 'showMenu 0.5s forwards'
+      })
+      cerrar?.addEventListener('click', () => {
+        menu.style.animation = 'hideMenu 0.5s forwards'
+        setTimeout(() => {
+          menu.style.display = 'none'
+        }, 500)
+      })
+      menu?.addEventListener('click', () => {
+        menu.style.animation = 'hideMenu 0.5s forwards'
+        setTimeout(() => {
+          menu.style.display = 'none'
+        }, 500)
+      })
+    }
+  }
+  // Call listener function at run time
+  matchM(x);
+
+  // Attach listener function on state changes
+  x.addEventListener("change", function() {
+    matchM(x);
+  });
+</script>
