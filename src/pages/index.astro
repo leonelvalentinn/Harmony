@@ -5,6 +5,9 @@ import Slider from '../components/Slider.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import Promotions from "../components/Promotions.astro";
+import Services from '../components/Services.astro';
+import Reviews from '../components/Reviews.astro';
+import Direction from '../components/Direction.astro';
 ---
 
 <Layout title="Harmony Dental Clinic">
@@ -13,6 +16,30 @@ import Promotions from "../components/Promotions.astro";
 		<Slider />
 		<Hero />
 		<Promotions />
+		<section class="w-full flex justify-center items-center py-14">
+			<div class="w-full flex justify-center items-center flex-col px-4">
+				<h2 class=" font-bold text-center text-4xl mb-5 md:text-6xl">Nuestos <strong class="text-gold-100">servicios dentales.</strong></h2>
+				<div class="w-full grid grid-cols-1 place-content-center place-items-center gap-8 md:grid-cols-[300px_minmax(0px,_250px)_300px]">
+					<Services 
+						p='Alinear los dientes no sólo contribuye a tener una sonrisa bonita sino tener una dentadura sana.'
+						title='Ortodoncia'
+						img='/ortodoncia.jpg'
+					/>
+					<Services 
+						p='Tenemos a los mejores especialistas en rehabilitación oral, ten una estética y armonía oral envidiable.'
+						title='Rehabilitación Oral'
+						img='/oral.jpg'
+					/>
+					<Services 
+						p='Obtén la sonrisa que siempre has deseado, nuestros expertos en diseño de sonrisa te harán tener uns sonrisa única.'
+						title='Diseño de sonrisa'
+						img='/sonrisa.webp'
+					/>
+				</div>
+			</div>
+		</section>
+		<Reviews />
+		<Direction />
 	</main>
 	<Footer />
 </Layout>
