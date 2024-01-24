@@ -4,14 +4,14 @@
 
 <section class="w-full flex justify-center items-center">
   <div class="w-full max-w-7xl px-4">
-    <h2 class="text-center font-black text-4xl">Conoce nuestras promociones</h2>
-    <div class="grid grid-cols-1 place-content-center mt-6 mb-6 gap-4">
+    <h2 class="text-center font-black text-4xl md:text-6xl">Conoce nuestras promociones</h2>
+    <div class="grid grid-cols-1 place-content-center mt-6 mb-6 gap-4 md:grid-cols-[410px_minmax(350px,_400px)_0px]">
       <div class="flex justify-center items-center flex-col">
-        <img src="/Promos-Recuperado.png" alt="Promoción 1" class="rounded-lg mb-4">
+        <img src="/Promos-Recuperado.png" alt="Promoción 1" class="rounded-lg mb-4 md:max-w-96">
         <a class=" px-4 py-3 rounded-md text-white font-semibold" href="http://" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
       </div>
       <div class="flex justify-center items-center flex-col">
-        <img src="/Promos-Recuperado2.png" alt="Promoción 1" class="rounded-lg mb-4">
+        <img src="/Promos-Recuperado2.png" alt="Promoción 1" class="rounded-lg mb-4 md:max-w-96">
         <a class=" px-4 py-3 rounded-md text-white font-semibold" href="http://" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
       </div>
     </div>
@@ -20,11 +20,11 @@
 
 <style>
   a {
-    background-color: var(--gold-200);
-    transition: all 0.275s linear;
+    background: linear-gradient(45deg, var(--gold-100), var(--gold-200));
+    transition: all 0.1s linear;
   }
   a:hover {
-    transition: all 0.275s linear;
-    background-color: var(--gold-100);
+    transition: all 0.1s linear;
+    transform: rotate(10deg);
   }
 </style>

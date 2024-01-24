@@ -1,0 +1,17 @@
+---
+interface Props {
+  text: string
+  name: string
+  img: string
+}
+const { text, name, img  } = Astro.props
+import Cita from './Cita.astro'
+import CitaD from './CitaD.astro'
+---
+
+<div class="swiper-slide p-10 bg-white">
+  <img src={img} class=" w-16">
+  <p class="text-lg font-semibold mt-7 relative pb-1"><Cita />{text}<CitaD /></p>
+  <hr class="w-full border-gray border-1 my-4">
+  <h3 class=" pt-5 font-semibold text-lg">{name}</h3>
+</div>

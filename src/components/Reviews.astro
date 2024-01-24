@@ -1,0 +1,104 @@
+---
+import Review from "./Review.astro";
+---
+
+<div class="w-full flex justify-center items-center bg-cover bg-center bg-no-repeat container-testimonios">
+  <div class=" bg-black/5 flex w-full justify-center items-center">
+    <section class="flex w-full justify-center items-center max-w-7xl">
+      <div class="px-4 py-14 flex justify-center items-center flex-col md:flex-row md:w-full" id="Testimonios">
+        <div class="flex justify-center items-start flex-col text-start mb-5">
+          <h4 class="text-blue-100 font-black text-4xl">TESTIMONIOS</h4>
+          <h3 class="text-white text-xl font-semibold">Opinión de Nuestros Pacientes</h3>
+          <p class=" mt-5 font-semibold text-lg">Algunos testimonios de nuestros pacientes</p>
+          <a class="text-white rounded-md text-lg font-semibold py-4 px-6 bg-gradient-to-r from-gold-100 to-gold-200" href="https://api.whatsapp.com/send?phone=523168670099" target="_blank" rel="noopener noreferrer">Contáctanos</a>
+        </div>
+        <div class="swiper-container relative w-[300px] my-0 mx-auto md:w-[400px] lg:w-[50%]">                          
+          <div class="swiper sample-slider-1">
+            <div class="swiper-wrapper">
+              <Review 
+                text="Excelente servicio de el dentista Juan Moreno trabaja muy bien excelente trato y muy profesional lo recomiendo ampliamente"
+                name="Javier Hdz"
+                img="/cliente1.webp"
+              />
+              <Review 
+                text="Muy amable y profesional, trabaja rápido y bien, recomendado 💯…"
+                name="Anahi Olivas"
+                img="/cliente7.png"
+              />
+              <Review 
+                text="Encantado con el servicio, siempre te reciben en el edificio de una increíble forma y el trato que te dan como paciente es esplendido!"
+                name="St. Patrick Renato"
+                img="/cliente8.png"
+              />
+              <Review 
+                text="Muy buen trato y atención, muy puntuales y excelentes resultados  ... ¡100 % recomendado!"
+                name="Magaly Parra"
+                img="/cliente6.webp"
+              />
+              <Review 
+                text="Excelente servicio me a gustado mucho el cambio y la mejoría"
+                name="Damariz Mariscal"
+                img="/cliente5.png"
+              />
+              <Review 
+                text="Recomiendo ampliamente al doctor Juan Moreno paredes por su buen trato a mi persona."
+                name="Alely Rodriguez Avitia"
+                img="/cliente4.png"
+              />
+              <Review 
+                text="Excelente servicio, muy profesional todo el personal! 100% Recomendado."
+                name="K M"
+                img="/cliente3.webp"
+              />
+              <Review 
+                text="Excelente atención, excelente lugar. Y excelencia total en equipo. Gracias mör Centro Dental."
+                name="Mayte Gonzalez"
+                img="/cliente2.webp"
+              />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>                           
+        </div> 
+      </div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .container-testimonios {
+    background-image: url(/reviews.webp);
+  }
+  .swiper-container .swiper-pagination,
+  .swiper-container-1 .swiper-pagination {
+    bottom: -30px!important;
+  }
+</style>
+
+<script>
+  const swiper = new Swiper('.sample-slider-1', {
+    loop: true, 
+    spaceBetween: 30,                        //loop
+    autoplay: {                         //autoplay
+      delay: 2000,  
+      disableOnInteraction: false,
+    },   
+    pagination: {                       //pagination(dots)
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function (index: any, className: any) {
+        return '<span class="' + className + '">' + '</span>';
+      },
+    },
+    navigation: {                       //navigation(arrows)
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    // Responsive breakpoints
+    breakpoints: {
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      }
+    }
+  })
+</script>
