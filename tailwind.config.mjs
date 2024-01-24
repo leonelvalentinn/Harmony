@@ -2,7 +2,13 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+        'blue-100': 'rgb(20, 28, 36)',
+				'gold-200': 'rgb(140,92,36)',
+				'gold-100': 'rgb(219,182,115)',
+      },
+		},
 	},
 	plugins: [],
 }
