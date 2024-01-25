@@ -7,49 +7,16 @@ interface Props {
 const { p, title, img } = Astro.props;
 ---
 
-<div class="card">
+<div class="card w-[250px] p-2 rounded-md bg-gradient-to-tr from-blue-100 to-[rgb(20,_20,_72)] transition-all hover:transition-all md:h-full md:w-full md:max-w-[350px]">
   <img src={img} alt="Promoción">
-  <div class="category"> {title} </div>
-  <div class="heading">
-    <p class="mb-2">{p}</p>
+  <div class="uppercase font-semibold text-gold-100 px-2 pt-3 text-sm md:text-lg"> {title} </div>
+  <div class="font-semibold text-white p-2">
+    <p class="mb-2 md:text-base">{p}</p>
     <a class="author"> Contáctanos </a>
   </div>
 </div>
 
 <style>
-  .card {
-  width: 250px;
-  background: linear-gradient(45deg, var(--blue-100), rgb(20, 20, 72));
-  padding: .4em;
-  border-radius: 6px;
-}
-.card-image {
-  background-color: rgb(236, 236, 236);
-  width: 100%;
-  height: 130px;
-  border-radius: 6px 6px 0 0;
-}
-.card-image:hover {
-  transform: scale(0.98);
-}
-.category {
-  text-transform: uppercase;
-  font-size: 0.9em;
-  font-weight: 600;
-  color: var(--gold-100);
-  padding: 10px 7px 0;
-}
-.category:hover {
-  cursor: pointer;
-}
-.heading {
-  font-weight: 600;
-  color: white;
-  padding: 7px;
-}
-.heading:hover {
-  cursor: pointer;
-}
 .author {
   color: white;
   font-weight: 700;
@@ -59,6 +26,7 @@ const { p, title, img } = Astro.props;
   overflow: hidden;
   z-index: 1;
   position: relative;
+  cursor: pointer;
 }
 .author::before {
   content: "";
@@ -74,11 +42,5 @@ const { p, title, img } = Astro.props;
 }
 .author:hover::before {
   width: 100%;
-}
-.name {
-  font-weight: 600;
-}
-.name:hover {
-  cursor: pointer;
 }
 </style>

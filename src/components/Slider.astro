@@ -2,18 +2,15 @@
 
 ---
 
-<div class="w-full md:h-[600px]">
+<div class="w-full h-[450px] md:h-[600px]">
   <div class="swiper sample-slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide desktop"><img src="/slider-1.jpg" alt="Imagen Slider"></div>
-      <div class="swiper-slide movil"><img src="/movil-slider.jpg" alt="Imagen Slider"></div>
-      <div class="swiper-slide desktop"><img src="/slider-2.jpg" alt="Imagen Slider"></div>
-      <div class="swiper-slide movil"><img src="/movil-slider-2.jpg" alt="Imagen Slider"></div>
-      <div class="swiper-slide desktop"><img src="/slider-3.jpg" alt="Imagen Slider"></div>
-      <div class="swiper-slide movil"><img src="/movil-slider-3.jpg" alt="Imagen Slider"></div>
+    <div class="swiper-wrapper" id="slider">
+      <div class="swiper-slide" data-swiper-autoplay="2000"><img src="/slider-1.jpg" alt="Imagen Slider"></div>
+      <div class="swiper-slide" data-swiper-autoplay="2000"><img src="/slider-2.jpg" alt="Imagen Slider"></div>
+      <div class="swiper-slide" data-swiper-autoplay="2000"><img src="/slider-3.jpg" alt="Imagen Slider"></div>
     </div>
   </div>
-</div>
+</div>  
 
 <style>
   .sample-slider{
@@ -25,29 +22,20 @@
     object-fit: cover;
     height: -webkit-fill-available;
   }
-  .desktop {
-    display: none !important;
-  }
-  @media (min-width: 768px) {
-    .desktop {
-      display: block !important;
-    }
-    .movil {
-      display: none !important;
-    }
-  }
 </style>
-
 <script>
+  import Swiper from 'swiper';
+  import { Autoplay, EffectFade } from 'swiper/modules';
   const swiper = new Swiper('.sample-slider', {
-    loop: true,                         //loop
-    autoplay: {                         //autoplay
-      delay: 2500,  
-      disableOnInteraction: false,
+    modules: [Autoplay, EffectFade],
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
     },
-    effect: 'fade',         // apply fade effect
-    fadeEffect: {           
-      crossFade: true     // resolve the overlapping of the slides
-    },       
-  })
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+  });
 </script>

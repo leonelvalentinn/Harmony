@@ -7,24 +7,41 @@
     <h2 class="text-center font-black text-4xl md:text-6xl">Conoce nuestras promociones</h2>
     <div class="grid grid-cols-1 place-content-center mt-6 mb-6 gap-4 md:grid-cols-[410px_minmax(350px,_400px)_0px]">
       <div class="flex justify-center items-center flex-col">
-        <img src="/Promos-Recuperado.png" alt="Promoción 1" class="rounded-lg mb-4 md:max-w-96">
-        <a class=" px-4 py-3 rounded-md text-white font-semibold" href="http://" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+        <a href="#" class="img-c rounded-lg mb-4 md:max-w-96">
+          <img src="/Promos-Recuperado.png" alt="Promoción 1" class="rounded-lg md:max-w-96">
+        </a>
+        <a class=" px-4 py-3 rounded-md text-white font-semibold a-c" href="http://" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
       </div>
       <div class="flex justify-center items-center flex-col">
-        <img src="/Promos-Recuperado2.png" alt="Promoción 1" class="rounded-lg mb-4 md:max-w-96">
-        <a class=" px-4 py-3 rounded-md text-white font-semibold" href="http://" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+        <a href="#"  class="img-c rounded-lg mb-4 md:max-w-96">
+          <img src="/Promos-Recuperado2.png" alt="Promoción 1" class="rounded-lg md:max-w-96">
+        </a>
+        <a class=" px-4 py-3 rounded-md text-white font-semibold a-c" href="http://" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i> WhatsApp</a>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  a {
+  .a-c {
     background: linear-gradient(45deg, var(--gold-100), var(--gold-200));
     transition: all 0.1s linear;
   }
-  a:hover {
+  .a-c:hover {
     transition: all 0.1s linear;
     transform: rotate(10deg);
+  }
+  .img-c {
+    transition: all 0.2s ease-in-out;
+  }
+  .img-c:hover ~ .a-c {
+    transition: all 0.1s linear;
+    transform: rotate(10deg);
+  }
+  .img-c:hover {
+    -webkit-box-shadow: 0px 0px 27px 17px rgba(219,183,115,0.65);
+    -moz-box-shadow: 0px 0px 27px 17px rgba(219,183,115,0.65);
+    box-shadow: 0px 0px 27px 17px rgba(219,183,115,0.65);
+    transition: all 0.2s ease-in-out;
   }
 </style>
