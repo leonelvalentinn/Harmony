@@ -1,0 +1,41 @@
+---
+import WhatsApp from "./WhatsApp.astro";
+
+interface Props {
+  promotion: string
+  alt: string
+}
+
+const { promotion, alt } = Astro.props 
+---
+
+<div class="flex justify-center items-center flex-col">
+  <a href="https://api.whatsapp.com/send?phone=523001518017" class="img-c rounded-lg mb-4 md:max-w-96" target="_blank">
+    <img src={promotion} alt={alt} class="rounded-lg">
+  </a>
+  <a class=" px-4 py-3 rounded-md text-white font-semibold a-c flex justify-center items-center" href="https://api.whatsapp.com/send?phone=523001518017" target="_blank" rel="noopener noreferrer"><WhatsApp class="mr-1 mb-[2px]"/></i> WhatsApp</a>
+</div>
+
+<style>
+  .a-c {
+    background: linear-gradient(45deg, var(--gold-100), var(--gold-200));
+    transition: all 0.1s linear;
+  }
+  .a-c:hover {
+    transition: all 0.1s linear;
+    transform: rotate(10deg);
+  }
+  .img-c {
+    transition: all 0.2s ease-in-out;
+  }
+  .img-c:hover ~ .a-c {
+    transition: all 0.1s linear;
+    transform: rotate(10deg);
+  }
+  .img-c:hover {
+    -webkit-box-shadow: 0px 0px 27px 17px rgba(219,183,115,0.65);
+    -moz-box-shadow: 0px 0px 27px 17px rgba(219,183,115,0.65);
+    box-shadow: 0px 0px 27px 17px rgba(219,183,115,0.65);
+    transition: all 0.2s ease-in-out;
+  }
+</style>
