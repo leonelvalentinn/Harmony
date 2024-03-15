@@ -11,9 +11,9 @@ const { promotion, alt } = Astro.props
 
 <div class="flex justify-center items-center flex-col">
   <a href="https://api.whatsapp.com/send?phone=523001518017" class="img-c rounded-lg mb-4 md:max-w-96" target="_blank">
-    <img src={promotion} alt={alt} class="rounded-lg">
+    <img src={promotion} alt={alt} class="rounded-lg md:w-full">
   </a>
-  <a class=" px-4 py-3 rounded-md text-white font-semibold a-c flex justify-center items-center" href="https://api.whatsapp.com/send?phone=523001518017" target="_blank" rel="noopener noreferrer"><WhatsApp class="mr-1 mb-[2px]"/></i> WhatsApp</a>
+  <a class=" px-4 py-3 rounded-md text-white font-semibold a-c flex justify-center items-center" href="https://api.whatsapp.com/send?phone=523001518017" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de la clínica"><WhatsApp class="mr-1 mb-[2px]"/></i> WhatsApp</a>
 </div>
 
 <style>
@@ -23,7 +23,7 @@ const { promotion, alt } = Astro.props
   }
   .a-c:hover {
     transition: all 0.1s linear;
-    transform: rotate(10deg);
+    transform: rotate(10deg); 
   }
   .img-c {
     transition: all 0.2s ease-in-out;

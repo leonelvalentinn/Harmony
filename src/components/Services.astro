@@ -8,11 +8,11 @@ const { p, title, img } = Astro.props;
 ---
 
 <div class="card p-2 rounded-md bg-gradient-to-tr from-blue-100 to-[rgb(20,_20,_72)] transition-all hover:transition-all md:h-full md:w-full md:max-w-[350px]">
-  <img src={img} alt="Promoción">
+  <img src={img} alt="Promoción" class="w-full">
   <div class="uppercase font-semibold text-gold-100 px-2 pt-3 text-sm md:text-lg"> {title} </div>
   <div class="font-semibold text-white p-2">
     <p class="mb-2 md:text-base">{p}</p>
-    <a class="author" href="https://api.whatsapp.com/send?phone=523001518017" target="_blank"> Llame ya </a>
+    <a class="author" href="https://api.whatsapp.com/send?phone=523001518017" target="_blank" aria-label="WhatsApp de la clínica" rel="noopener noreferrer"> Llame ya </a>
   </div>
 </div>
 
