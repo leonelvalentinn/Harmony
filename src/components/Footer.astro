@@ -2,7 +2,7 @@
 import Facebook from "./Facebook.astro";
 import Instagram from "./Instagram.astro";
 
-
+const year = new Date().getFullYear()
 ---
 
 <footer class="w-full flex justify-center items-center flex-col bg-blue-100">
@@ -35,7 +35,7 @@ import Instagram from "./Instagram.astro";
   </div>
   <hr class="w-full border-white border-1 my-4">
   <div class="w-full max-w-6xl px-4 text-center text-white">
-    <p>Copyright © 2024 · Harmony Dental</p>
+    <p>Copyright © {year} · Harmony Dental</p>
     <a href="https://dentarios.com.mx" target="_blank" rel="noopener noreferrer">Diseño web y posicionamiento: Dentarios</a>
   </div>
 </footer>

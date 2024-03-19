@@ -6,15 +6,15 @@ import Review from "./Review.astro";
   <div class=" bg-blue-100/75 flex w-full justify-center items-center">
     <section class="flex w-full justify-center items-center max-w-7xl">
       <div class="px-4 py-14 flex justify-center items-center flex-col md:flex-row md:w-full" id="Testimonios">
-        <div class="flex justify-center items-start flex-col text-start mb-5">
+        <div class="flex justify-center items-start flex-col text-start mb-5 md:pr-4">
           <h3 class="text-gold-100 font-black text-4xl">TESTIMONIOS</h3>
           <h4 class="text-white text-xl font-semibold">Opinión de Nuestros Pacientes</h4>
           <p class=" mt-5 font-semibold text-lg text-white">Algunos testimonios de nuestros pacientes</p>
           <a class="text-white rounded-md text-lg font-semibold py-[10px] px-[15px] bg-gradient-to-r from-gold-100 to-gold-200 transition-all hover:transition-all hover:scale-105" href="https://api.whatsapp.com/send?phone=523001518017" target="_blank" rel="noopener noreferrer" title="Número de WhatsApp de la clínica">Llame ya</a>
         </div>
-        <div class="swiper-container relative w-[300px] my-0 mx-auto md:w-[400px] lg:w-[50%]">                          
-          <div class="swiper sample-slider-1">
-            <div class="swiper-wrapper">
+        <div class="splide w-[300px] my-0 mx-auto max-w-2xl md:w-[400px] lg:w-full" aria-label="Slider de reseñas de los pacientes" id="slider-resenas">                          
+          <div class="splide__track">
+            <ul class="splide__list">
               <Review 
                 text="Servicio excelente las instalaciones son muy modernas,me realice un micro diseño y blanqueamientos a muy buen precio. Totalmente recomendado!"
                 name="Emiro Feral"
@@ -55,9 +55,8 @@ import Review from "./Review.astro";
                 name="Pamela Zapata"
                 img="/cliente2.webp"
               />
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>                           
+            </ul>
+          </div>                         
         </div> 
       </div>
     </section>
@@ -68,32 +67,30 @@ import Review from "./Review.astro";
   .container-testimonios {
     background-image: url(/reviews.webp);
   }
-  .swiper-container .swiper-pagination,
-  .swiper-container-1 .swiper-pagination {
-    bottom: -30px!important;
-  }
 </style>
+
 <script>
-  import Swiper from 'swiper';
-  import { Autoplay, Pagination  } from 'swiper/modules';
-  const swiper1 = new Swiper('.sample-slider-1', {
-    modules: [Autoplay, Pagination ],
-    speed: 400,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true,
-    },
+  import Splide from '@splidejs/splide';
+  import { Intersection } from '@splidejs/splide-extension-intersection';
+  new Splide( '#slider-resenas', {
+    type   : 'loop',
+    perPage: 2,
+    autoplay: 'pause',
+    interval: 2500,
+    arrows: false,
     breakpoints: {
-      1024: {
-        slidesPerView: 2,
-        spaceBetween: 40
-      }
-    }
-  });
+      1020: {
+        perPage: 1,
+        padding: 0,
+      },
+    },
+    intersection: {
+      inView: {
+        autoplay: true,
+      },
+      outView: {
+        autoplay: false,
+      },
+    },
+  } ).mount( { Intersection } );
 </script>

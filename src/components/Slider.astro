@@ -1,41 +1,49 @@
 ---
-
+import '@splidejs/splide/css';
 ---
-
-<div class="w-full h-[450px] md:h-[600px]">
-  <div class="swiper sample-slider">
-    <div class="swiper-wrapper" id="slider">
-      <div class="swiper-slide" data-swiper-autoplay="2000"><img src="/slider-1.webp" alt="Imagen Slider" loading="lazy"></div>
-      <div class="swiper-slide" data-swiper-autoplay="2000"><img src="/sonrisa.webp" alt="Imagen Slider" loading="lazy"></div>
-      <div class="swiper-slide" data-swiper-autoplay="2000"><img src="/movil.webp" alt="Imagen Slider" loading="lazy"></div>
+<section class="w-full h-[450px] md:h-[600px]">
+  <section class="splide w-full h-full" aria-label="Slider de imagenes" id="slider-hero">
+    <div class="splide__track w-full h-full">
+      <ul class="splide__list w-full h-full">
+        <li class="splide__slide w-full h-full" role="article" aria-roledescription="slide">
+          <img src="/slider-1.webp" alt="Imagen Slider" loading="eager" fetchpriority="high">
+        </li>
+        <li class="splide__slide w-full h-full" role="article" aria-roledescription="slide">
+          <img src="/sonrisa.webp" alt="Imagen Slider" loading="eager" fetchpriority="high">
+        </li>
+        <li class="splide__slide w-full h-full" role="article" aria-roledescription="slide">
+          <img src="/movil.webp" alt="Imagen Slider" loading="eager" fetchpriority="high">
+        </li>
+      </ul>
     </div>
-  </div>
-</div>  
+  </section>
+</section>
+
+<script>
+  import Splide from '@splidejs/splide';
+  import { Intersection } from '@splidejs/splide-extension-intersection';
+  new Splide( '#slider-hero', {
+    type   : 'loop',
+    perPage: 1,
+    autoplay: 'pause',
+    interval: 2000,
+    pagination: false,
+    arrows: false,
+    intersection: {
+      inView: {
+        autoplay: true,
+      },
+      outView: {
+        autoplay: false,
+      },
+    },
+  } ).mount( { Intersection } );
+</script>
 
 <style>
-  .sample-slider{
-    width: 100%;
-    height: 100%;
-  }
-  .sample-slider img{
+  img{
     width: 100%;
     object-fit: cover;
     height: -webkit-fill-available;
   }
 </style>
-<script>
-  import Swiper from 'swiper';
-  import { Autoplay, EffectFade } from 'swiper/modules';
-  const swiper = new Swiper('.sample-slider', {
-    modules: [Autoplay, EffectFade],
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-    },
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
-  });
-</script>

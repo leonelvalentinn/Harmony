@@ -3,9 +3,16 @@ import 'photoswipe/style.css';
 
 interface Props {
   img: string
+  hover: string
 }
 
-const { img } = Astro.props
+const { img, hover } = Astro.props
+
+let color = "img-c"
+
+if (hover === 'gold') {
+  color = 'img-gold'
+}
 
 const GALLERY_IMAGES = [
   {
@@ -57,7 +64,7 @@ const GALLERY_IMAGES = [
   {
     Array.from({ length: 6 }).map((_, i) => (
     <a 
-      class={`rounded-xl shadow-xl overflow-hidden ${GALLERY_IMAGES[i].span} img-c transition-shadow aspect-auto`}
+      class={`rounded-xl shadow-xl overflow-hidden ${GALLERY_IMAGES[i].span} ${color} transition-shadow aspect-auto`}
       href={`/${img}-${i + 1}.jpeg`} 
       data-cropped="true"
       data-pswp-width={`${GALLERY_IMAGES[i].width}`} 
@@ -87,13 +94,19 @@ const GALLERY_IMAGES = [
   </script>
 
   <style>
-    .img-c {
+    .img-c, .img-gold {
     transition: all 0.2s ease-in-out;
   }
   .img-c:hover {
     -webkit-box-shadow: 0px 0px 27px 17px rgba(219, 115, 212, 0.65);
     -moz-box-shadow: 0px 0px 27px 17px rgba(219, 115, 212, 0.65);
     box-shadow: 0px 0px 27px 17px rgba(219, 115, 212, 0.65);
+    transition: all 0.2s ease-in-out;
+  }
+  .img-gold:hover {
+    -webkit-box-shadow: 0px 0px 27px 17px rgba(219,183,115,0.65);
+    -moz-box-shadow: 0px 0px 27px 17px rgba(219,183,115,0.65);
+    box-shadow: 0px 0px 27px 17px rgba(219,183,115,0.65);
     transition: all 0.2s ease-in-out;
   }
 </style>
