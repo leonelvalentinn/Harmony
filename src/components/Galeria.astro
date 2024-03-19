@@ -1,48 +1,54 @@
 ---
 import 'photoswipe/style.css';
 
+interface Props {
+  img: string
+}
+
+const { img } = Astro.props
+
 const GALLERY_IMAGES = [
   {
     id: 1,
-    alt: "",
+    alt: "Foto del consultorio Harmony Dental Clinic",
     width: 1600,
     height: 1200,
     span: "col-span-4",
   },
   {
     id: 2,
-    alt: "",
+    alt: "Foto del consultorio Harmony Dental Clinic",
     width: 1200,
     height: 1600,
     span: "col-span-6",
   },
   {
     id: 3,
-    alt: "",
+    alt: "Foto del consultorio Harmony Dental Clinic",
     width: 1600,
     height: 1200,
     span: "col-span-6",
   },
   {
     id: 4,
-    alt: "",
+    alt: "Foto del consultorio Harmony Dental Clinic",
     width: 1200,
     height: 1600,
     span: "col-span-4",
   },
   {
     id: 5,
-    alt: "",
-    width: 1600,
-    height: 1200,
-    span: "col-span-6",
-  },
-  {
-    id: 6,
-    alt: "",
+    alt: "Foto del consultorio Harmony Dental Clinic",
     width: 1200,
     height: 1600,
     span: "col-span-4",
+  },
+  {
+    id: 6,
+    alt: "Foto del consultorio Harmony Dental Clinic",
+    width: 1600,
+    height: 1200,
+    span: "col-span-6",
   },
 ]
 ---
@@ -52,14 +58,14 @@ const GALLERY_IMAGES = [
     Array.from({ length: 6 }).map((_, i) => (
     <a 
       class={`rounded-xl shadow-xl overflow-hidden ${GALLERY_IMAGES[i].span} img-c transition-shadow aspect-auto`}
-      href={`/odonto-${i + 1}.jpeg`} 
+      href={`/${img}-${i + 1}.jpeg`} 
       data-cropped="true"
       data-pswp-width={`${GALLERY_IMAGES[i].width}`} 
       data-pswp-height={`${GALLERY_IMAGES[i].height}`}
       target="_blank"
     >
       <img 
-        src={`/odonto-${i + 1}.webp`}
+        src={`/${img}-${i + 1}.webp`}
         alt={GALLERY_IMAGES[i].alt}
         loading="lazy"
         class="rounded-lg relative object-cover w-full h-full"
